@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+:root,
+.theme-obsidian {
+  --font-cinzel: 'Cinzel', serif;
+  --font-reading: 'Newsreader', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --bg-page: #080808;
+  --bg-surface: #0c0c0c;
+  --bg-surface-elevated: #151515;
+  --bg-surface-translucent: rgba(15, 15, 15, 0.75);
+  --border-color: rgba(255, 255, 255, 0.10);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --text-primary: #e0e0e0;
+  --text-secondary: rgba(255, 255, 255, 0.60);
+  --text-muted: rgba(255, 255, 255, 0.35);
+  --accent-primary: #b8860b;
+  --accent-secondary: #d4af37;
+  --accent-light: rgba(184, 134, 11, 0.15);
+  --accent-text: #080808;
+  --glow-color: rgba(184, 134, 11, 0.18);
+  --glow-accent: rgba(184, 134, 11, 0.08);
+  --glow-strong: rgba(184, 134, 11, 0.35);
+  --card-gradient: linear-gradient(180deg, #0f0f0f 0%, #0c0c0c 100%);
+  --quote-card-gradient: linear-gradient(180deg, #0f0f0f 0%, #090909 100%);
+}
+
+  /* Theme: Marble Pantheon (Classical ivory light mode with antique gold aura) */
+  .theme-marble {
+    --bg-page: #f8f6f0;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #f3ede2;
+    --bg-surface-translucent: rgba(255, 255, 255, 0.86);
+    --border-color: rgba(180, 83, 9, 0.2);
+    --border-subtle: rgba(0, 0, 0, 0.07);
+    --text-primary: #1c1917;
+    --text-secondary: #57534e;
+    --text-muted: #78716c;
+    --accent-primary: #b45309;
+    --accent-secondary: #92400e;
+    --accent-light: #fffbeb;
+    --accent-text: #ffffff;
+    --glow-color: rgba(180, 83, 9, 0.16);
+    --glow-accent: rgba(217, 119, 6, 0.12);
+    --glow-strong: rgba(180, 83, 9, 0.32);
+    --card-gradient: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(247, 243, 235, 0.92) 100%);
+    --quote-card-gradient: linear-gradient(160deg, rgba(254, 243, 199, 0.35) 0%, rgba(255, 255, 255, 0.95) 100%);
+  }
+
+  /* Theme: Athenian Midnight (Celestial cyan & deep cosmic slate) */
+  .theme-elysian {
+    --bg-page: #060911;
+    --bg-surface: #0d1424;
+    --bg-surface-elevated: #162238;
+    --bg-surface-translucent: rgba(13, 20, 36, 0.85);
+    --border-color: rgba(6, 182, 212, 0.22);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-primary: #06b6d4;
+    --accent-secondary: #0ea5e9;
+    --accent-light: #cffafe;
+    --accent-text: #060911;
+    --glow-color: rgba(6, 182, 212, 0.24);
+    --glow-accent: rgba(14, 165, 233, 0.18);
+    --glow-strong: rgba(6, 182, 212, 0.44);
+    --card-gradient: linear-gradient(145deg, rgba(22, 34, 56, 0.85) 0%, rgba(13, 20, 36, 0.95) 100%);
+    --quote-card-gradient: linear-gradient(160deg, rgba(8, 51, 68, 0.6) 0%, rgba(13, 20, 36, 0.95) 100%);
+  }
+
+  /* Theme: Imperial Tyrian (Roman royal purple with warm bronze/gold glow) */
+  .theme-tyrian {
+    --bg-page: #0d0714;
+    --bg-surface: #170d22;
+    --bg-surface-elevated: #241434;
+    --bg-surface-translucent: rgba(23, 13, 34, 0.85);
+    --border-color: rgba(216, 180, 254, 0.2);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --text-primary: #faf5ff;
+    --text-secondary: #d8b4fe;
+    --text-muted: #a855f7;
+    --accent-primary: #eab308;
+    --accent-secondary: #c084fc;
+    --accent-light: #fef08a;
+    --accent-text: #170d22;
+    --glow-color: rgba(192, 132, 252, 0.26);
+    --glow-accent: rgba(234, 179, 8, 0.18);
+    --glow-strong: rgba(192, 132, 252, 0.45);
+    --card-gradient: linear-gradient(145deg, rgba(36, 20, 52, 0.85) 0%, rgba(23, 13, 34, 0.95) 100%);
+    --quote-card-gradient: linear-gradient(160deg, rgba(59, 7, 100, 0.6) 0%, rgba(23, 13, 34, 0.95) 100%);
+  }
+
+  /* Theme: Cypress Grove (Aegean evergreen & jade glow) */
+  .theme-cypress {
+    --bg-page: #07100b;
+    --bg-surface: #0f1d15;
+    --bg-surface-elevated: #172c21;
+    --bg-surface-translucent: rgba(15, 29, 21, 0.85);
+    --border-color: rgba(16, 185, 129, 0.22);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --text-primary: #f0fdf4;
+    --text-secondary: #86efac;
+    --text-muted: #4ade80;
+    --accent-primary: #10b981;
+    --accent-secondary: #059669;
+    --accent-light: #d1fae5;
+    --accent-text: #07100b;
+    --glow-color: rgba(16, 185, 129, 0.24);
+    --glow-accent: rgba(5, 150, 105, 0.18);
+    --glow-strong: rgba(16, 185, 129, 0.44);
+    --card-gradient: linear-gradient(145deg, rgba(23, 44, 33, 0.85) 0%, rgba(15, 29, 21, 0.95) 100%);
+    --quote-card-gradient: linear-gradient(160deg, rgba(6, 78, 59, 0.6) 0%, rgba(15, 29, 21, 0.95) 100%);
+  }
+
+  /* Theme: Ancient Parchment (Warm papyrus & terracotta glow) */
+  .theme-parchment {
+    --bg-page: #f4ede2;
+    --bg-surface: #fdfbf7;
+    --bg-surface-elevated: #ede2d1;
+    --bg-surface-translucent: rgba(253, 251, 247, 0.88);
+    --border-color: rgba(194, 65, 12, 0.2);
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --text-primary: #292524;
+    --text-secondary: #57534e;
+    --text-muted: #78716c;
+    --accent-primary: #c2410c;
+    --accent-secondary: #9a3412;
+    --accent-light: #ffedd5;
+    --accent-text: #ffffff;
+    --glow-color: rgba(194, 65, 12, 0.16);
+    --glow-accent: rgba(234, 88, 12, 0.12);
+    --glow-strong: rgba(194, 65, 12, 0.32);
+    --card-gradient: linear-gradient(145deg, rgba(253, 251, 247, 0.95) 0%, rgba(240, 228, 212, 0.92) 100%);
+    --quote-card-gradient: linear-gradient(160deg, rgba(254, 215, 170, 0.35) 0%, rgba(253, 251, 247, 0.95) 100%);
+  }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Sophisticated Dark Typography & Glow Patterns */
+.serif {
+  font-family: 'Georgia', var(--font-reading), serif;
+}
+
+.glowing-card {
+  box-shadow: 0 0 60px 10px rgba(184, 134, 11, 0.08), 0 0 20px 2px rgba(184, 134, 11, 0.05);
+}
+
+.active-glow {
+  background: radial-gradient(circle at center, rgba(184, 134, 11, 0.15) 0%, transparent 70%);
+}
+
+.nav-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(15, 15, 15, 0.75);
+}
+
+/* Ambient Glowing Shadows */
+.ambient-glow-sm {
+  box-shadow: 0 4px 16px -2px var(--glow-color), 0 0 10px 0px var(--glow-accent);
+}
+
+.ambient-glow-md {
+  box-shadow: 0 10px 32px -4px var(--glow-color), 0 0 20px 2px var(--glow-accent);
+}
+
+.ambient-glow-lg {
+  box-shadow: 0 18px 48px -6px var(--glow-color), 0 0 32px 4px var(--glow-accent);
+}
+
+.ambient-glow-interactive {
+  box-shadow: 0 8px 24px -4px var(--glow-color), 0 0 16px 1px var(--glow-accent);
+  transition: box-shadow 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.ambient-glow-interactive:hover {
+  box-shadow: 0 16px 42px -4px var(--glow-strong), 0 0 28px 4px var(--glow-accent);
+  transform: translateY(-2px);
+}
+
+@keyframes ambientPulse {
+  0%, 100% {
+    box-shadow: 0 12px 36px -4px var(--glow-color), 0 0 24px 2px var(--glow-accent);
+  }
+  50% {
+    box-shadow: 0 18px 52px -4px var(--glow-strong), 0 0 38px 6px var(--glow-color);
+  }
+}
+
+.ambient-glow-pulse {
+  animation: ambientPulse 4s ease-in-out infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
