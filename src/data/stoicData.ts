@@ -114,6 +114,13 @@ export const STOIC_AUTHORS: StoicAuthor[] = [
   }
 ];
 
+export function getDayOfYear(date: Date = new Date()): number {
+  const start = new Date(date.getFullYear(), 0, 0);
+  const diff = date.getTime() - start.getTime() + ((start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
+  const oneDay = 1000 * 60 * 60 * 24;
+  return Math.floor(diff / oneDay);
+}
+
 export const STOIC_QUOTES: StoicQuote[] = [
   {
     id: 'quote-4',
@@ -176,7 +183,9 @@ export const STOIC_QUOTES: StoicQuote[] = [
     conceptGreek: 'Memento Mori',
     conceptEnglish: 'Remember You Must Die (Cherish Present Time)',
     reflectionPrompt: 'If this hour were your final hour of work, how would you direct your attention?',
-    context: 'Dedicated to his father-in-law Paulinus, warning him against letting trivial administrative chores consume his lifespan.'
+    context: 'Dedicated to his father-in-law Paulinus, warning him against letting trivial administrative chores consume his lifespan.',
+    openLibraryEdition: 'OL15438902W',
+    era: '49 AD'
   },
   {
     id: 'quote-6',
@@ -187,7 +196,9 @@ export const STOIC_QUOTES: StoicQuote[] = [
     conceptGreek: 'Amor Fati',
     conceptEnglish: 'Love of One\'s Fate',
     reflectionPrompt: 'What unexpected obstacle occurred yesterday that you can choose to embrace as useful fuel?',
-    context: 'Epictetus was physically crippled from slavery, yet viewed his limp as an external indifference.'
+    context: 'Epictetus was physically crippled from slavery, yet viewed his limp as an external indifference.',
+    openLibraryEdition: 'OL66749W',
+    era: '125 AD'
   },
   {
     id: 'quote-7',
@@ -198,7 +209,9 @@ export const STOIC_QUOTES: StoicQuote[] = [
     conceptGreek: 'Ὑπεξαίρεσις (Hypexairesis)',
     conceptEnglish: 'The Reserve Clause',
     reflectionPrompt: 'Can the current friction in your path be converted into an exercise in patience, creativity, or courage?',
-    context: 'Reflecting on rebellious provinces and uncooperative senators.'
+    context: 'Reflecting on rebellious provinces and uncooperative senators.',
+    openLibraryEdition: 'OL12345W',
+    era: '175 AD'
   },
   {
     id: 'quote-8',
@@ -209,7 +222,9 @@ export const STOIC_QUOTES: StoicQuote[] = [
     conceptGreek: 'Αὐτάρκεια (Autarkeia)',
     conceptEnglish: 'Self-Sufficiency & Contentment',
     reflectionPrompt: 'What possession or privilege are you chasing that you can happily declare unnecessary today?',
-    context: 'Warning against the luxurious consumption of Nero\'s Roman court.'
+    context: 'Warning against the luxurious consumption of Nero\'s Roman court.',
+    openLibraryEdition: 'OL15438865W',
+    era: '64 AD'
   },
   {
     id: 'quote-9',
@@ -220,7 +235,9 @@ export const STOIC_QUOTES: StoicQuote[] = [
     conceptGreek: 'Ἀπάθεια (Apatheia)',
     conceptEnglish: 'Freedom from Destructive Passions',
     reflectionPrompt: 'What blessing are you treating as an eternal right, rather than a temporary loan from nature?',
-    context: 'Teaching students to see mortal attachments through cosmic perspective.'
+    context: 'Teaching students to see mortal attachments through cosmic perspective.',
+    openLibraryEdition: 'OL66749W',
+    era: '125 AD'
   },
   {
     id: 'quote-10',
@@ -231,7 +248,87 @@ export const STOIC_QUOTES: StoicQuote[] = [
     conceptGreek: 'Προμελετᾶν (Premeditatio Malorum)',
     conceptEnglish: 'Premeditation of Evils & Compassion',
     reflectionPrompt: 'How will you protect your serenity when someone cuts you off, criticizes you, or fails to thank you today?',
-    context: 'The classic morning preparation drill of Roman imperial leadership.'
+    context: 'The classic morning preparation drill of Roman imperial leadership.',
+    openLibraryEdition: 'OL12345W',
+    era: '165 AD'
+  },
+  {
+    id: 'quote-11',
+    text: 'He who fears death will never do anything worthy of a man who is alive.',
+    author: 'Seneca',
+    work: 'Moral Letters to Lucilius, Letter LXX',
+    discipline: 'will',
+    conceptGreek: 'Φόβος Θανάτου',
+    conceptEnglish: 'Overcoming the Dread of Mortality',
+    reflectionPrompt: 'What bold, honest, or compassionate initiative are you postponing out of fear of failure or criticism?',
+    context: 'Seneca contemplating his own precarious standing during the tyrannical reign of Nero.',
+    openLibraryEdition: 'OL15438865W',
+    era: '63 AD'
+  },
+  {
+    id: 'quote-12',
+    text: 'Don\'t explain your philosophy. Embody it.',
+    author: 'Epictetus',
+    work: 'Enchiridion, Chapter 46',
+    discipline: 'action',
+    conceptGreek: 'Ἔργον (Ergon)',
+    conceptEnglish: 'Demonstration Through Conduct',
+    reflectionPrompt: 'Where can you show restraint, calm, or kindness in silence today without bragging about it?',
+    context: 'Epictetus warning students not to parade philosophical jargon at Roman dinner parties.',
+    openLibraryEdition: 'OL66749W',
+    era: '125 AD'
+  },
+  {
+    id: 'quote-13',
+    text: 'Dwell on the beauty of life. Watch the stars, and see yourself running with them.',
+    author: 'Marcus Aurelius',
+    work: 'Meditations, Book VII.47',
+    discipline: 'perception',
+    conceptGreek: 'Συμπάθεια (Sympatheia)',
+    conceptEnglish: 'Cosmic Perspective & Interconnectedness',
+    reflectionPrompt: 'Look up at the sky or a tree today. How does the vastness of the universe put your immediate worries into proportion?',
+    context: 'Marcus cultivating awe and perspective amidst grueling military campaigns.',
+    openLibraryEdition: 'OL12345W',
+    era: '172 AD'
+  },
+  {
+    id: 'quote-14',
+    text: 'If anyone can refute me—show me I am making a mistake or looking at things from the wrong perspective—I will gladly change. What I seek is the truth, which never harmed anyone. What harms us is to persist in self-deceit and ignorance.',
+    author: 'Marcus Aurelius',
+    work: 'Meditations, Book VI.21',
+    discipline: 'perception',
+    conceptGreek: 'Ἀλήθεια (Aletheia)',
+    conceptEnglish: 'Devotion to Objective Truth',
+    reflectionPrompt: 'Are you clinging to being "right" in an argument, or are you genuinely open to the truth?',
+    context: 'Marcus examining his own cognitive biases as absolute ruler of the Mediterranean world.',
+    openLibraryEdition: 'OL12345W',
+    era: '171 AD'
+  },
+  {
+    id: 'quote-15',
+    text: 'Associate with people who are likely to improve you. Welcome those whom you are capable of improving. The process is mutual: men learn as they teach.',
+    author: 'Seneca',
+    work: 'Moral Letters to Lucilius, Letter VII',
+    discipline: 'action',
+    conceptGreek: 'Κοινωνία (Koinonia)',
+    conceptEnglish: 'Mutual Fellowship & Noble Friendship',
+    reflectionPrompt: 'Who in your circle elevates your standards, and whose bad habits are you unconsciously adopting?',
+    context: 'Seneca warning against spending idle hours amidst the mob at the Roman gladiatorial arena.',
+    openLibraryEdition: 'OL15438865W',
+    era: '62 AD'
+  },
+  {
+    id: 'quote-16',
+    text: 'First say to yourself what you would be; and then do what you have to do.',
+    author: 'Epictetus',
+    work: 'Discourses, Book III.23',
+    discipline: 'will',
+    conceptGreek: 'Προαίρεσις (Prohairesis)',
+    conceptEnglish: 'Moral Character & Deliberate Purpose',
+    reflectionPrompt: 'What kind of human being do you choose to be today before stepping into your first conversation?',
+    context: 'Addressing youths who sought superficial eloquence rather than deep character formation.',
+    openLibraryEdition: 'OL138983A',
+    era: '108 AD'
   }
 ];
 

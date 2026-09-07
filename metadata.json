@@ -1,6 +1,6 @@
 {
   "name": "Daily Stoic",
-  "description": "A daily Stoic philosophy and wisdom app featuring Open Library book and author integration, ambient glowing card shadows, and dynamic theme switching.",
+  "description": "A daily Stoic wisdom web application featuring real Open Library document text integration, human-like AI voice reader with stoic sage personas, and live daily streak tracking.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

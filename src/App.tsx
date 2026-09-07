@@ -5,14 +5,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { TabType, ThemeId, OpenLibraryDoc } from './types';
-import { MobileFrame } from './components/MobileFrame';
+import { AppLayout } from './components/AppLayout';
 import { TodayTab } from './components/TodayTab';
 import { LibraryTab } from './components/LibraryTab';
 import { PracticesTab } from './components/PracticesTab';
 import { JournalTab } from './components/JournalTab';
 import { SettingsTab } from './components/SettingsTab';
 import { ThemeSelectorModal } from './components/ThemeSelectorModal';
-import { BookDetailModal } from './components/BookDetailModal';
+import { DocumentReaderModal } from './components/DocumentReaderModal';
 
 const SAVED_BOOKS_STORAGE_KEY = 'stoic_saved_books';
 const THEME_STORAGE_KEY = 'stoic_active_theme';
@@ -101,7 +101,8 @@ export default function App() {
 
   return (
     <div className={`min-h-screen ${currentTheme} transition-colors duration-300 font-sans`}>
-      <MobileFrame
+      {/* Full-Screen Web App Layout with Live Streak Tracking and AI Voice status */}
+      <AppLayout
         activeTab={activeTab}
         onChangeTab={setActiveTab}
         onOpenThemeModal={() => setIsThemeModalOpen(true)}
@@ -111,6 +112,7 @@ export default function App() {
           <TodayTab
             onOpenJournal={handleOpenJournalWithPrompt}
             onOpenLibrary={() => setActiveTab('library')}
+            onSelectBook={(book) => setSelectedBook(book)}
           />
         )}
 
@@ -140,7 +142,7 @@ export default function App() {
             onOpenThemeModal={() => setIsThemeModalOpen(true)}
           />
         )}
-      </MobileFrame>
+      </AppLayout>
 
       {/* Dynamic Theme & Ambient Glow Modal */}
       <ThemeSelectorModal
@@ -152,8 +154,8 @@ export default function App() {
         onGlowIntensityChange={handleGlowIntensityChange}
       />
 
-      {/* Open Library Book Details Modal */}
-      <BookDetailModal
+      {/* Open Library In-App Document Reader with Authentic Text & AI Voice */}
+      <DocumentReaderModal
         book={selectedBook}
         isOpen={!!selectedBook}
         onClose={() => setSelectedBook(null)}
